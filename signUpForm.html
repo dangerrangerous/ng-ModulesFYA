@@ -1,7 +1,22 @@
-<form name = "signup_form" novalidate ng-submit="signupForm()">
-	<fieldset>
-		<legend>Signup</legend>
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<head>
+</head>
 
-		<button type ="submit" class="button radius">Submit</button>
-	</fieldset>
-</form>
+<body>
+	<form name = "signup_form" novalidate ng-submit="signupForm()">
+		<fieldset>
+			<legend>Signup</legend>
+
+			<button type ="submit" class="button radius">Submit</button>
+		</fieldset>
+	</form>
+
+	<div class="row">
+		<div class="large-12 columns">
+			<label>Name</label>
+			<input type="text" placeholder="Name" name="name" ng-model="signup.name"
+					ng-minlength=3 ng-maxlength=20 required/>
+		</div>
+	</div>	
+</body>
