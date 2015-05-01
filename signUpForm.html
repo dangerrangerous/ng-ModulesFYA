@@ -20,7 +20,7 @@
 		<div class="error"
 			ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
 		<small class="error"
-			ng-show="signup_form.name.$error.required">Name is required</small>
+			ng-show="signup_form.name.$error.required">Your name is required</small>
 		<small class="error"
 			ng-show="signup_form.name.$error.minlength">Name needs to be at least 2 characters</small>
 		<small class="error"
@@ -28,4 +28,17 @@
 		</div>
 		</div>	
 	</div>
+	<div class="row">
+		<div class="large-12 columns">
+			<label>Your Email</label>
+			<input type="email" placeholder="Email" name="email" ng-model="signup.email"
+					ng-minlength=3 ng-maxlength=20 required />
+			<div class="error" ng-show="signup_form.email.$dirty $$ signup_form.email.$invalid">
+			<small class="error"
+					ng-show="signup_form.email.$error.required"> Your Email is required. </small>
+			<small class="error"
+					ng-show="signup_form.email.$error.minlength">Your Email needs to be at least 3 characters</small>
+			<small class="error"
+					ng-show="signup_form.email.$error.email">Invalid Email, please input a valid email.</small>
+
 </body>
