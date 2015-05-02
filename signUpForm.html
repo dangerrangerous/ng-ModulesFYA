@@ -1,24 +1,29 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
+<html ng-app="myApp">
 <head>
+  
+  <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0-rc.2/angular.js"></script>
+
 </head>
 
 <body>
 	<form name = "signup_form" novalidate ng-submit="signupForm()">
 		<fieldset>
 			<legend>Signup</legend>
-
-			<button type ="submit"
-				ng-disabled="singup_form.$invalid"
-				class="button radius">Submit</button>
 		</fieldset>
 	</form>
 
 	<div class="row">
 		<div class="large-12 columns">
 			<label>Name</label>
-			<input type="text" placeholder="Name" name="name" ng-model="signup.name"
-					ng-minlength=2 ng-maxlength=20 required/>
+			<input type="text"
+					 placeholder="Name"
+					 name="name" 
+					 ng-model="signup.name"
+					 ng-minlength=2 
+					 ng-maxlength=20 required/>
 		<div class="error"
 			ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
 		<small class="error"
@@ -33,9 +38,14 @@
 	<div class="row">
 		<div class="large-12 columns">
 			<label>Your Email</label>
-			<input type="email" placeholder="Email" name="email" ng-model="signup.email"
-					ng-minlength=3 ng-maxlength=20 required />
-			<div class="error" ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+			<input type="email" 
+					placeholder="Email" 
+					name="email" 
+					ng-model="signup.email"
+					ng-minlength=3 
+					ng-maxlength=20 required />
+			<div class="error" 
+				ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
 			<small class="error"
 					ng-show="signup_form.email.$error.required"> Your Email is required. </small>
 			<small class="error"
@@ -58,7 +68,9 @@
 					ng-maxlength=20
 					ensure-unique="username" required />
 		<div class="error"
-			ng-show="singup_form.username.$error.required">Please input a username</small>
+			ng-show="signup_form.username.$dirty && signup_form.username.$invalid">
+			<small class="error" 
+				ng-show=""signup_form.username.$error.required">Please input a username</small>
 			<small class="error"
 				ng-show="signup_form.username.$error.minlength">Username must be at least 3 characters.</small>		
 			<small class="error"
@@ -68,4 +80,11 @@
 		</div>
 	</div>
 
+	<button type ="submit"
+	ng-disabled="singup_form.$invalid"
+	class="button radius">Submit</button>	
+
+
+
 </body>
+</html>
