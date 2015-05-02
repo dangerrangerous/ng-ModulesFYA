@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <meta charset="UTF-8">
-<html ng-app="myApp">
+<html>
 <head>
   
   <link rel="stylesheet" href="http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.min.css">
@@ -8,13 +8,14 @@
 
 </head>
 
-<body>
-	<form name = "signup_form" novalidate ng-submit="signupForm()">
+<body ng-app="myApp">
+	<form name="signup_form" 
+		novalidate 
+		ng-submit="signupForm()"
+		ng-controller="signupController">
 		<fieldset>
 			<legend>Signup</legend>
-		</fieldset>
-	</form>
-
+		
 	<div class="row">
 		<div class="large-12 columns">
 			<label>Name</label>
@@ -80,9 +81,9 @@
 		</div>
 	</div>
 
-	<button type ="submit"
-	ng-disabled="singup_form.$invalid"
-	class="button radius">Submit</button>	
+	<button type ="submit" class="button radius">Submit</button>	
+	</fieldset>
+</form>
 
 
 
