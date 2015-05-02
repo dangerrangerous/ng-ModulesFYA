@@ -8,7 +8,9 @@
 		<fieldset>
 			<legend>Signup</legend>
 
-			<button type ="submit" class="button radius">Submit</button>
+			<button type ="submit"
+				ng-disabled="singup_form.$invalid"
+				class="button radius">Submit</button>
 		</fieldset>
 	</form>
 
