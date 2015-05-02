@@ -14,8 +14,7 @@
 		ng-submit="signupForm()"
 		ng-controller="signupController">
 		<fieldset>
-			<legend>Signup</legend>
-		
+			<legend>Signup</legend>		
 	<div class="row">
 		<div class="large-12 columns">
 			<label>Name</label>
@@ -26,7 +25,7 @@
 					 ng-minlength=2 
 					 ng-maxlength=20 required/>
 		<div class="error"
-			ng-show="signup_form.name.$dirty && signup_form.name.$invalid">
+			ng-show="signup_form.name.$dirty && signup_form.name.$invalid && signup_form.submitted">
 		<small class="error"
 			ng-show="signup_form.name.$error.required">Your name is required</small>
 		<small class="error"
@@ -46,7 +45,7 @@
 					ng-minlength=3 
 					ng-maxlength=20 required />
 			<div class="error" 
-				ng-show="signup_form.email.$dirty && signup_form.email.$invalid">
+				ng-show="signup_form.email.$dirty && signup_form.email.$invalid && signup_form.submitted">
 			<small class="error"
 					ng-show="signup_form.email.$error.required"> Your Email is required. </small>
 			<small class="error"
@@ -69,7 +68,7 @@
 					ng-maxlength=20
 					ensure-unique="username" required />
 		<div class="error"
-			ng-show="signup_form.username.$dirty && signup_form.username.$invalid">
+			ng-show="signup_form.username.$dirty && signup_form.username.$invalid && signup_form.submitted">
 			<small class="error" 
 				ng-show=""signup_form.username.$error.required">Please input a username</small>
 			<small class="error"
